@@ -1,7 +1,6 @@
 import processing.core.PApplet;
 import processing.core.PFont;
 
-import java.util.*;
 
 public class MainApp extends PApplet {
     Ball[] balls = new Ball[18];
@@ -31,7 +30,6 @@ public class MainApp extends PApplet {
 
 //    loops, this is where you can put the logic
     public void draw() {
-//        redraw the background so the ellipse does not leave a trail
         background(0);
 //        int score = showScore();
 
@@ -48,8 +46,6 @@ public class MainApp extends PApplet {
         text("Score: " + timer,100,450);
         timer += 1;
 
-
-        mousePressed();
     }
 
     int showScore() {
@@ -57,10 +53,12 @@ public class MainApp extends PApplet {
     }
 
     public void mousePressed() {
+//        show reset button TODO
         if (!looping) {
-//            reset();
+            reset();
         }
     }
+
 
     void reset() {
         //        timer
@@ -74,6 +72,8 @@ public class MainApp extends PApplet {
                     parseInt((int) random(50,400)),parseInt((int)(random(2,8))),
                     parseInt((int)(random(2,8))), parseInt((int) random(10,100)));
         }
+
+        loop();
 
     }
 
